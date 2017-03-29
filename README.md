@@ -1,0 +1,2 @@
+# stadtwerkwinterthur
+Stadtwerk Winterthur StreamServe Schnittstelle
