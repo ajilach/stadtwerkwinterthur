@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Dokumente SYSTEM "Dokumentenstruktur_generisch.dtd">
+<Dokumente>
+    <Dokument>
+        <!-- Meta-Informationen zur Ausgabesteuerung -->
+        <Steuerinformationen>
+            <Ausgabekanäle>
+                <Ausgabekanal Kanalname="DruckIntern">
+                    <Druckername>Druckerbezeichnung</Druckername>
+                    <Kopieanzahl>n</Kopieanzahl>
+                    <!-- weitere Felder sind noch zu ergänzen -->
+                </Ausgabekanal>
+
+                <Ausgabekanal Kanalname="Archiv">
+                    <Archivsystem>Z01</Archivsystem>
+                    <Archivdocumentid>3456789</Archivdocumentid>
+                    <Archivdocumenttype>ZTYPE</Archivdocumenttype>
+                    <!-- weitere Felder sind noch zu ergänzen -->
+                </Ausgabekanal>
+
+                <Ausgabekanal Kanalname="Email">
+                    <Emailadresse>E-mail</Emailadresse>
+                    <!-- weitere Felder sind noch zu ergänzen -->
+                </Ausgabekanal>
+            </Ausgabekanäle>
+
+            <SapSystem>T99</SapSystem>
+            <SapMandant>999</SapMandant>
+
+                                
+            <!-- weitere Felder sind noch zu ergänzen -->
+        </Steuerinformationen>
+
+        <!-- Formularübergreifende Strukturen -->
+        <AllgemeineInfos>
+            <Betreff>Betrefftext</Betreff>
+
+            <Adressen>
+                <Adresse Rolle="Absender">
+                    <Adresszeile>Absenderadresse 1</Adresszeile>
+                    <Adresszeile>Absenderadresse 2</Adresszeile>
+                    <Adresszeile>Absenderadresse 3</Adresszeile>
+                    <Adresszeile>Absenderadresse 4</Adresszeile>
+                    <Adresszeile>Absenderadresse 5</Adresszeile>
+                </Adresse>
+
+                <Adresse Rolle="Empfänger">
+                    <Adresszeile>Empfängeradresse 1</Adresszeile>
+                    <Adresszeile>Empfängeradresse 2</Adresszeile>
+                    <Adresszeile>Empfängeradresse 3</Adresszeile>
+                    <Adresszeile>Empfängeradresse 4</Adresszeile>
+                    <Adresszeile>Empfängeradresse 5</Adresszeile>
+                    <Adresszeile>Empfängeradresse 6</Adresszeile>
+                    <Adresszeile>Empfängeradresse 7</Adresszeile>
+                </Adresse>
+                 
+                <Adresse Rolle="Sekundärempfänger">
+                    <Adresszeile>Sekundäradresse 1</Adresszeile>
+                    <Adresszeile>Sekundäradresse 2</Adresszeile>
+                    <Adresszeile>Sekundäradresse 3</Adresszeile>
+                    <Adresszeile>Sekundäradresse 4</Adresszeile>
+                    <Adresszeile>Sekundäradresse 5</Adresszeile>
+                </Adresse>
+            </Adressen>
+
+            <Informationsblock>
+                <Infozeilen>
+                    <Infozeile>
+                        <InfoTitel Feldinfo="SAP Feldname 1">Feldbezeichnung 1</InfoTitel>
+                        <InfoInhalt>Feldinhalt 1</InfoInhalt>
+                    </Infozeile>
+                    <Infozeile>
+                        <InfoTitel>Feldbezeichnung 2</InfoTitel>
+                        <InfoInhalt>Feldinhalt 2</InfoInhalt>
+                    </Infozeile>
+                </Infozeilen>
+            </Informationsblock>
+
+            <Wasserzeichenliste>
+                <Wasserzeichen>Wasserzeichentext 1</Wasserzeichen>
+                <Wasserzeichen>Wasserzeichentext 2</Wasserzeichen>
+            </Wasserzeichenliste>
+
+            <Grussformel>Grussformeltext</Grussformel>
+
+            <Funktionen>
+                <Funktionseintrag>
+                    <Namenszeile>Namenstext 1</Namenszeile>
+                    <Funktionszeile>Funktionstext 1</Funktionszeile>
+                    <Abteilungszeile>Abteilungstext 1</Abteilungszeile>
+                    <Unterschrift>Graphikname 1</Unterschrift>
+                </Funktionseintrag>
+
+                <Funktionseintrag>
+                    <Namenszeile>Namenstext 2</Namenszeile>
+                    <Funktionszeile>Funktionstext 2</Funktionszeile>
+                    <Abteilungszeile>Abteilungstext 2</Abteilungszeile>
+                    <Unterschrift>Graphikname 2</Unterschrift>
+                </Funktionseintrag>
+
+                <Funktionseintrag>
+                    <Namenszeile>Namenstext 3</Namenszeile>
+                    <Funktionszeile>Funktionstext 3</Funktionszeile>
+                    <Abteilungszeile>Abteilungstext 3</Abteilungszeile>
+                    <Unterschrift>Graphikname 3</Unterschrift>
+                </Funktionseintrag>
+            </Funktionen>
+            
+            <Beilagen>
+                <Beilage>Beilage 1</Beilage>
+                <Beilage>Beilage 2</Beilage>
+                <Beilage>Beilage 3</Beilage>
+            </Beilagen>
+
+            <Marketingtext>Marketing Message</Marketingtext>
+
+            <Fusszeile>
+                <Hinweistext>Dies ist ein Hinweistext.</Hinweistext>
+            </Fusszeile>
+
+            <Einzahlungsschein>
+                <Adressen>
+                    <Adresse Rolle="Belasteter">
+                        <Adresszeile>Empfängeradresse 1</Adresszeile>
+                        <Adresszeile>Empfängeradresse 2</Adresszeile>
+                        <Adresszeile>Empfängeradresse 3</Adresszeile>
+                        <Adresszeile>Empfängeradresse 4</Adresszeile>
+                        <Adresszeile>Empfängeradresse 5</Adresszeile>
+                        <Adresszeile>Empfängeradresse 6</Adresszeile>
+                        <Adresszeile>Empfängeradresse 7</Adresszeile>
+                    </Adresse>
+
+                    <Adresse Rolle="Begünstigter">
+                        <Adresszeile>Empfängeradresse 1</Adresszeile>
+                        <Adresszeile>Empfängeradresse 2</Adresszeile>
+                        <Adresszeile>Empfängeradresse 3</Adresszeile>
+                    </Adresse>
+                </Adressen>
+
+                <Kontonummer>123456</Kontonummer>
+                <Referenznummer>1234567893456789</Referenznummer>
+                <Codierzeile>2345678456783456789</Codierzeile>
+                <BetragFranken>999</BetragFranken>
+                <BetragRappen>00</BetragRappen>
+            </Einzahlungsschein>
+        </AllgemeineInfos>
+        
+        <!-- Formularspezifische Strukturen -->
+        <Dokumenteninhalt>
+            <!-- Tabellen, Brieftexte etc. -->
+        </Dokumenteninhalt>
+    </Dokument>
+</Dokumente>

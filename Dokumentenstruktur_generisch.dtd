@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--######################## Hauptstruktur ########################-->
+<!ELEMENT Dokumente ((Dokument+))>
+<!ELEMENT Dokument ((Steuerinformationen, AllgemeineInfos, Dokumenteninhalt))>
+
+<!--######################## Allgemeine Strukturen ########################-->
+<!-- Adresse -->
+<!ELEMENT Adresse ((Adresszeile+))>
+<!ATTLIST Adresse	Rolle (Sekundärempfänger | Empfänger | Belasteter | Begünstigter | Absender) #REQUIRED>
+<!ELEMENT Adresszeile (#PCDATA)>
+
+<!-- Ausgabekanal -->
+<!ELEMENT Ausgabekanal (((Emailadresse | (Druckername, Kopieanzahl) | (Archivsystem, Archivdocumentid, Archivdocumenttype))))>
+<!ATTLIST Ausgabekanal	Kanalname (DruckIntern | Archiv | Email) #REQUIRED>
+<!ELEMENT Kanalname (#PCDATA)>
+<!ELEMENT Emailadresse (#PCDATA)>
+<!ELEMENT Druckername (#PCDATA)>
+<!ELEMENT Kopieanzahl (#PCDATA)>
+<!ELEMENT Archivsystem (#PCDATA)>
+<!ELEMENT Archivdocumenttype (#PCDATA)>
+<!ELEMENT Archivdocumentid (#PCDATA)>
+
+<!-- Infozeilen -->
+<!ELEMENT Infozeilen ((Infozeile+))>
+<!ELEMENT Infozeile ((InfoTitel, InfoInhalt))>
+<!ELEMENT InfoTitel (#PCDATA)>
+<!ATTLIST InfoTitel	Feldinfo CDATA #IMPLIED>
+<!ELEMENT InfoInhalt (#PCDATA)>
+
+<!-- Wasserzeichenliste -->
+<!ELEMENT Wasserzeichen (#PCDATA)>
+
+<!-- Funktionseintrag -->
+<!ELEMENT Funktionseintrag ((Namenszeile, Funktionszeile?, Abteilungszeile?, Unterschrift?))>
+<!ELEMENT Namenszeile (#PCDATA)>
+<!ELEMENT Funktionszeile (#PCDATA)>
+<!ELEMENT Abteilungszeile (#PCDATA)>
+<!ELEMENT Unterschrift (#PCDATA)>
+
+<!-- Beilagen -->
+<!ELEMENT Beilage (#PCDATA)>
+
+<!-- Fusszeile -->
+<!ELEMENT Hinweistext (#PCDATA)>
+
+<!-- Einzahlungsschein -->
+<!-- Adressen werden im separaten Block oben abgehandelt -->
+<!ELEMENT Referenznummer (#PCDATA)>
+<!ELEMENT Kontonummer (#PCDATA)>
+<!ELEMENT Codierzeile (#PCDATA)>
+<!ELEMENT BetragRappen (#PCDATA)>
+<!ELEMENT BetragFranken (#PCDATA)>
+
+<!-- ######################## Dokumentenstruktur ########################-->
+<!-- Block Steuerinformationen -->
+<!ELEMENT Steuerinformationen ((Ausgabekanäle, SapSystem, SapMandant))>
+<!ELEMENT Ausgabekanäle ((Ausgabekanal+))>
+<!ELEMENT SapSystem (#PCDATA)>
+<!ELEMENT SapMandant (#PCDATA)>
+
+<!-- Block AllgemeineInfos -->
+<!ELEMENT AllgemeineInfos ((Betreff, Adressen, Informationsblock, Wasserzeichenliste?, Grussformel?, Funktionen?, Beilagen?, Marketingtext?, Fusszeile, Einzahlungsschein?))>
+<!ELEMENT Betreff (#PCDATA)>
+<!ELEMENT Adressen ((Adresse+))>
+<!ELEMENT Informationsblock ((Infozeilen))>
+<!ELEMENT Wasserzeichenliste (Wasserzeichen+)>
+<!ELEMENT Grussformel (#PCDATA)>
+<!ELEMENT Funktionen ((Funktionseintrag+))>
+<!ELEMENT Beilagen ((Beilage+))>
+<!ELEMENT Marketingtext (#PCDATA)>
+<!ELEMENT Fusszeile ((Hinweistext))>
+<!ELEMENT Einzahlungsschein ((Adressen, Kontonummer, Referenznummer, Codierzeile, BetragFranken, BetragRappen))>
+
+<!-- Block Dokumenteninhalt (formularspezifisch) -->
+<!ELEMENT Dokumenteninhalt (#PCDATA)>
