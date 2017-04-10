@@ -11,8 +11,8 @@
 <!ELEMENT Adresszeile (#PCDATA)>
 
 <!-- Ausgabekanal -->
-<!ELEMENT Ausgabekanal (((Emailadresse | (Druckername, Kopieanzahl) | (Archivsystem, Archivdocumentid, Archivdocumenttype))))>
-<!ATTLIST Ausgabekanal	Kanalname (DruckIntern | Archiv | Email) #REQUIRED>
+<!ELEMENT Ausgabekanal (((Emailadresse | (Druckername, Kopieanzahl) | (Archivsystem, Archivdocumentid, Archivdocumenttype) | Faxnummer)))>
+<!ATTLIST Ausgabekanal	Kanalname (DruckIntern | Archiv | Email | Fax) #REQUIRED>
 <!ELEMENT Kanalname (#PCDATA)>
 <!ELEMENT Emailadresse (#PCDATA)>
 <!ELEMENT Druckername (#PCDATA)>
@@ -20,6 +20,7 @@
 <!ELEMENT Archivsystem (#PCDATA)>
 <!ELEMENT Archivdocumenttype (#PCDATA)>
 <!ELEMENT Archivdocumentid (#PCDATA)>
+<!ELEMENT Faxnummer (#PCDATA)>
 
 <!-- Infozeilen -->
 <!ELEMENT Infozeilen ((Infozeile+))>

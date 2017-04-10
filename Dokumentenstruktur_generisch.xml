@@ -22,6 +22,11 @@
                     <Emailadresse>E-mail</Emailadresse>
                     <!-- weitere Felder sind noch zu ergänzen -->
                 </Ausgabekanal>
+
+                <Ausgabekanal Kanalname="Fax">
+                    <Faxnummer>0112223344</Faxnummer>
+                    <!-- weitere Felder sind noch zu ergänzen -->
+                </Ausgabekanal>
             </Ausgabekanäle>
 
             <SapSystem>T99</SapSystem>
