@@ -29,8 +29,13 @@
                 </Ausgabekanal>
             </Ausgabekanäle>
 
-            <SapSystem>T99</SapSystem>
-            <SapMandant>999</SapMandant>
+            <SapSysteminfo>
+                <SapSystem>T99</SapSystem>
+                <SapMandant>999</SapMandant>
+                <SapUser>sapusername</SapUser>
+                <SapDatum>YYYYMMDD</SapDatum>
+                <SapUhrzeit>HHMMSS</SapUhrzeit>
+            </SapSysteminfo>
 
                                 
             <!-- weitere Felder sind noch zu ergänzen -->

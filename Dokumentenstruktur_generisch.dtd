@@ -22,6 +22,13 @@
 <!ELEMENT Archivdocumentid (#PCDATA)>
 <!ELEMENT Faxnummer (#PCDATA)>
 
+<!-- SapSysteminfo -->
+<!ELEMENT SapSystem (#PCDATA)>
+<!ELEMENT SapMandant (#PCDATA)>
+<!ELEMENT SapUser (#PCDATA)>
+<!ELEMENT SapDatum (#PCDATA)>
+<!ELEMENT SapUhrzeit (#PCDATA)>
+
 <!-- Infozeilen -->
 <!ELEMENT Infozeilen ((Infozeile+))>
 <!ELEMENT Infozeile ((InfoTitel, InfoInhalt))>
@@ -55,10 +62,9 @@
 
 <!-- ######################## Dokumentenstruktur ########################-->
 <!-- Block Steuerinformationen -->
-<!ELEMENT Steuerinformationen ((Ausgabekanäle, SapSystem, SapMandant))>
+<!ELEMENT Steuerinformationen ((Ausgabekanäle, SapSysteminfo))>
 <!ELEMENT Ausgabekanäle ((Ausgabekanal+))>
-<!ELEMENT SapSystem (#PCDATA)>
-<!ELEMENT SapMandant (#PCDATA)>
+<!ELEMENT SapSysteminfo ((SapSystem, SapMandant, SapUser, SapDatum, SapUhrzeit))>
 
 <!-- Block AllgemeineInfos -->
 <!ELEMENT AllgemeineInfos ((Betreff, Adressen, Informationsblock, Wasserzeichenliste?, Grussformel?, Funktionen?, Beilagen?, Marketingtext?, Fusszeile, Einzahlungsschein?))>
