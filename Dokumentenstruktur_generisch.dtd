@@ -26,8 +26,7 @@
 <!ELEMENT SapSystem (#PCDATA)>
 <!ELEMENT SapMandant (#PCDATA)>
 <!ELEMENT SapUser (#PCDATA)>
-<!ELEMENT SapDatum (#PCDATA)>
-<!ELEMENT SapUhrzeit (#PCDATA)>
+<!ELEMENT SapTimestamp (#PCDATA)>
 
 <!-- Infozeilen -->
 <!ELEMENT Infozeilen ((Infozeile+))>

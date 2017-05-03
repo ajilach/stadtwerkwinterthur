@@ -33,8 +33,7 @@
                 <SapSystem>T99</SapSystem>
                 <SapMandant>999</SapMandant>
                 <SapUser>sapusername</SapUser>
-                <SapDatum>YYYYMMDD</SapDatum>
-                <SapUhrzeit>HHMMSS</SapUhrzeit>
+                <SapTimestamp>2017-01-23-14.30.08.456234</SapTimestamp>
             </SapSysteminfo>
 
                                 
@@ -46,6 +45,7 @@
             <Betreff>Betrefftext</Betreff>
 
             <Adressen>
+                <!-- Maximal 6 Adresszeilen werden unterstützt -->
                 <Adresse Rolle="Absender">
                     <Adresszeile>Absenderadresse 1</Adresszeile>
                     <Adresszeile>Absenderadresse 2</Adresszeile>
@@ -61,7 +61,6 @@
                     <Adresszeile>Empfängeradresse 4</Adresszeile>
                     <Adresszeile>Empfängeradresse 5</Adresszeile>
                     <Adresszeile>Empfängeradresse 6</Adresszeile>
-                    <Adresszeile>Empfängeradresse 7</Adresszeile>
                 </Adresse>
                  
                 <Adresse Rolle="Sekundärempfänger">
