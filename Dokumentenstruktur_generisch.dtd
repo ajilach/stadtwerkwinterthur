@@ -69,10 +69,10 @@
 <!ELEMENT AllgemeineInfos ((Betreff, Adressen, Informationsblock, Wasserzeichenliste?, Grussformel?, Funktionen?, Beilagen?, Marketingtext?, Fusszeile, Einzahlungsschein?))>
 <!ELEMENT Betreff (#PCDATA)>
 <!ELEMENT Adressen ((Adresse+))>
-<!ELEMENT Informationsblock ((Infozeilen))>
+<!ELEMENT Informationsblock ((Infozeilen*))>
 <!ELEMENT Wasserzeichenliste (Wasserzeichen+)>
 <!ELEMENT Grussformel (#PCDATA)>
-<!ELEMENT Funktionen ((Funktionseintrag+))>
+<!ELEMENT Funktionen ((Funktionseintrag*))>
 <!ELEMENT Beilagen ((Beilage+))>
 <!ELEMENT Marketingtext (#PCDATA)>
 <!ELEMENT Fusszeile ((Hinweistext))>
