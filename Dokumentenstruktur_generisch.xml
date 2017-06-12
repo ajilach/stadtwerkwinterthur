@@ -12,10 +12,14 @@
                 </Ausgabekanal>
 
                 <Ausgabekanal Kanalname="Archiv">
-                    <Archivsystem>Z01</Archivsystem>
-                    <Archivdocumentid>3456789</Archivdocumentid>
-                    <Archivdocumenttype>ZTYPE</Archivdocumenttype>
-                    <!-- weitere Felder sind noch zu ergänzen -->
+                    <ArchivOmrPrefix>*IDX1Anfang|</ArchivOmrPrefix>
+                    <ArchivObjectType>PRINTDOC</ArchivObjectType>
+                    <ArchivDocumentart>ISU_BILL</ArchivDocumentart>
+                    <ArchivBelegnummer>8000000102</ArchivBelegnummer>
+                    <ArchivVertragskontonummer>2127203</ArchivVertragskontonummer>
+                    <ArchivGeschäftspartner>3127203</ArchivGeschäftspartner>
+                    <ArchivBelegsdatum>16.12.2016</ArchivBelegsdatum>
+                    <ArchivOmrSuffix>|GeschaeftspartnerTextNochNichtBefuellt|IDX1Ende*</ArchivOmrSuffix>
                 </Ausgabekanal>
 
                 <Ausgabekanal Kanalname="Email">
@@ -27,6 +31,10 @@
                     <Faxnummer>0112223344</Faxnummer>
                     <!-- weitere Felder sind noch zu ergänzen -->
                 </Ausgabekanal>
+
+                <Ausgabekanal Kanalname="Vorschau">
+                    <DeckblattText>PREVIEW_BILL004105004553</DeckblattText>
+                </Ausgabekanal>
             </Ausgabekanäle>
 
             <SapSysteminfo>
@@ -36,12 +44,25 @@
                 <SapTimestamp>2017-01-23-14.30.08.456234</SapTimestamp>
             </SapSysteminfo>
 
-                                
-            <!-- weitere Felder sind noch zu ergänzen -->
+            <!-- Für die IS-U Rechnung sieht der OMR Code wie folgt aus:  -->
+            <!-- OMRAnfang|ESR|Kundenid|GV_OBJID|Seitenzahl|OMREnde -->
+            <OmrCode>
+                <OmrPrefix>OMRAnfang|ESR|</OmrPrefix>
+                <OmrKundenid>12456475</OmrKundenid>
+                <OmrObjekt>00654654646846</OmrObjekt>
+                <OmrSuffix>|OMREnde</OmrSuffix>
+            </OmrCode>
         </Steuerinformationen>
 
         <!-- Formularübergreifende Strukturen -->
         <AllgemeineInfos>
+            <!-- Bei der IS-U Rechnung ist dies die Rechnungsart GV_BILLTYPE -->
+            <Dokumenttyp>01</Dokumenttyp>
+
+            <!-- Bei der IS-U Rechnung ist dies der GV_STATUS -->
+            <!-- Mögliche Werte: Original, Storno, Kopie, Simulation -->
+            <Dokumentstatus>Original</Dokumentstatus>
+
             <Betreff>Betrefftext</Betreff>
 
             <Adressen>

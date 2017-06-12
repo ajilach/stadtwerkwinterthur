@@ -11,22 +11,34 @@
 <!ELEMENT Adresszeile (#PCDATA)>
 
 <!-- Ausgabekanal -->
-<!ELEMENT Ausgabekanal (((Emailadresse | (Druckername, Kopieanzahl) | (Archivsystem, Archivdocumentid, Archivdocumenttype) | Faxnummer)))>
-<!ATTLIST Ausgabekanal	Kanalname (DruckIntern | Archiv | Email | Fax) #REQUIRED>
+<!ELEMENT Ausgabekanal (((Emailadresse | (Druckername, Kopieanzahl) | (ArchivOmrPrefix, ArchivObjectType, ArchivDocumentart, ArchivBelegnummer, ArchivVertragskontonummer, ArchivGeschäftspartner, ArchivBelegsdatum, ArchivOmrSuffix) | Faxnummer | DeckblattText)))>
+<!ATTLIST Ausgabekanal	Kanalname (DruckIntern | Archiv | Email | Fax | Vorschau) #REQUIRED>
 <!ELEMENT Kanalname (#PCDATA)>
 <!ELEMENT Emailadresse (#PCDATA)>
 <!ELEMENT Druckername (#PCDATA)>
 <!ELEMENT Kopieanzahl (#PCDATA)>
-<!ELEMENT Archivsystem (#PCDATA)>
-<!ELEMENT Archivdocumenttype (#PCDATA)>
-<!ELEMENT Archivdocumentid (#PCDATA)>
+<!ELEMENT ArchivOmrPrefix (#PCDATA)>
+<!ELEMENT ArchivObjectType (#PCDATA)>
+<!ELEMENT ArchivDocumentart (#PCDATA)>
+<!ELEMENT ArchivBelegnummer (#PCDATA)>
+<!ELEMENT ArchivVertragskontonummer (#PCDATA)>
+<!ELEMENT ArchivGeschäftspartner (#PCDATA)>
+<!ELEMENT ArchivBelegsdatum (#PCDATA)>
+<!ELEMENT ArchivOmrSuffix (#PCDATA)>
 <!ELEMENT Faxnummer (#PCDATA)>
+<!ELEMENT DeckblattText (#PCDATA)>
 
 <!-- SapSysteminfo -->
 <!ELEMENT SapSystem (#PCDATA)>
 <!ELEMENT SapMandant (#PCDATA)>
 <!ELEMENT SapUser (#PCDATA)>
 <!ELEMENT SapTimestamp (#PCDATA)>
+
+<!-- OmrCode -->
+<!ELEMENT OmrPrefix (#PCDATA)>
+<!ELEMENT OmrKundenid (#PCDATA)>
+<!ELEMENT OmrObjekt (#PCDATA)>
+<!ELEMENT OmrSuffix (#PCDATA)>
 
 <!-- Infozeilen -->
 <!ELEMENT Infozeilen ((Infozeile+))>
@@ -61,12 +73,15 @@
 
 <!-- ######################## Dokumentenstruktur ########################-->
 <!-- Block Steuerinformationen -->
-<!ELEMENT Steuerinformationen ((Ausgabekanäle, SapSysteminfo))>
+<!ELEMENT Steuerinformationen ((Ausgabekanäle, SapSysteminfo, OmrCode?))>
 <!ELEMENT Ausgabekanäle ((Ausgabekanal+))>
-<!ELEMENT SapSysteminfo ((SapSystem, SapMandant, SapUser, SapDatum, SapUhrzeit))>
+<!ELEMENT SapSysteminfo ((SapSystem, SapMandant, SapUser, SapTimestamp))>
+<!ELEMENT OmrCode ((OmrPrefix, OmrKundenid, OmrObjekt, OmrSuffix))>
 
 <!-- Block AllgemeineInfos -->
-<!ELEMENT AllgemeineInfos ((Betreff, Adressen, Informationsblock, Wasserzeichenliste?, Grussformel?, Funktionen?, Beilagen?, Marketingtext?, Fusszeile, Einzahlungsschein?))>
+<!ELEMENT AllgemeineInfos ((Dokumenttyp, Dokumentstatus, Betreff, Adressen, Informationsblock, Wasserzeichenliste?, Grussformel?, Funktionen?, Beilagen?, Marketingtext?, Fusszeile, Einzahlungsschein?))>
+<!ELEMENT Dokumenttyp (#PCDATA)>
+<!ELEMENT Dokumentstatus (#PCDATA)>
 <!ELEMENT Betreff (#PCDATA)>
 <!ELEMENT Adressen ((Adresse+))>
 <!ELEMENT Informationsblock ((Infozeilen*))>
